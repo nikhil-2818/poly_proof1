@@ -1,17 +1,21 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
+
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: "0.8.24",
   networks: {
-    sepolia: {
-      url: process.env.SEP_TEST_RPC,
-      chainId:11155111,
-      accounts:[process.env.SEP_PRIV_KEY]
+    mumbai: {
+      url: 'https://rpc-mumbai.maticvigil.com',
+      accounts: [process.env.PRIVATE_KEY],
     },
-    localhost: {
-      url: process.env.LOC_RPC,
-      accounts:[process.env.LOC_PRIV_KEY]
-    }
+    goerli: {
+      url: 'https://ethereum-goerli.publicnode.com',
+      accounts: [process.env.PRIVATE_KEY],
+    },
+    sepolia: {
+      url: 'https://ethereum-sepolia.blockpi.network/v1/rpc/public',
+      accounts: [process.env.PRIVATE_KEY],
+  }
   }
 };
